@@ -60,7 +60,7 @@ main {
 
 h1, h2 {
     text-align: center;
-    padding-top: 10rem;    
+    margin-top: 10rem;   
 }
 
 .result {
