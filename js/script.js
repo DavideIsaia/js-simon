@@ -16,7 +16,8 @@ for (let i =1; i <=5; i++) {
 // creo un timer che arrivato a zero fa scomparire i numeri e comparire i 5 prompt;
 const countContainer = document.getElementById("timer");
 let count = parseInt(countContainer.textContent);
-let userNumber;
+let userNumber = 0;
+const arrayUserNumbers = [];
 
 const timer = setInterval(function(){
     count--;
@@ -24,7 +25,6 @@ const timer = setInterval(function(){
     if (count === 0) {
         // ferma il timer
         clearInterval(timer);
-
         // cancella i numeri a schermo
         document.querySelector("h2").innerHTML = "";
 
@@ -35,6 +35,8 @@ const timer = setInterval(function(){
                 do {
                     userNumber = parseInt (prompt (`Inserisci il ${i}° numero compreso tra 1 e 100:`));
                     console.log(`il ${i} numero è:`, userNumber);
+                    arrayUserNumbers.push(userNumber);
+                    console.log("numeri inseriti", arrayUserNumbers);
                 } while (userNumber < 1 || userNumber > 100);
             }             
         }, 20);        
