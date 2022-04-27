@@ -5,12 +5,15 @@
 // creo una funzione che stampa 5 numeri random (io scelgo un range da 1 a 100);
 const randomNumbers = document.getElementById("random-numbers");
 let rndNumber;
+const arrayRndNumbers = [];
 
 for (let i =1; i <=5; i++) {
     rndNumber = getRndInteger(1, 100);
     console.log(i, rndNumber);
+    arrayRndNumbers.push(rndNumber);
     randomNumbers.innerHTML += (` - ${rndNumber} - `);
 }
+console.log(arrayRndNumbers);
 
 
 // creo un timer che arrivato a zero fa scomparire i numeri e comparire i 5 prompt;
@@ -47,8 +50,16 @@ const timer = setInterval(function(){
 
 
 // controllo quanti e quali numeri combaciano e li stampo in pagina.
+const endResult = document.createElement("h2");
+endResult.className = "result";
+let result;
 
-
+if (arrayRndNumbers === arrayUserNumbers) {
+    result = `Hai indovinato i numeri ${arrayUserNumbers}`;
+}
+endResult.textContent = result;
+console.log(result);
+document.querySelector("main").append(endResult);
 
 
 // ------------------------------

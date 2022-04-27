@@ -65,7 +65,7 @@ h1, h2 {
 
 .result {
     position: absolute;
-    top: 5rem;  
+    bottom: 5rem;  
     width: 100%;
     text-align: center;
 }
